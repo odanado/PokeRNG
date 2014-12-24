@@ -5,6 +5,9 @@
 
 #ifndef POKERNG_CONFIG_HPP
 #define POKERNG_CONFIG_HPP
+
+#include <cstdint>
+
 namespace PokeRNG {
     typedef uint64_t u64;
     typedef uint32_t u32;
