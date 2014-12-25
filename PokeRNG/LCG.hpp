@@ -52,7 +52,7 @@ public:
     UIntType next_n(UIntType, UIntType) const;
     UIntType prev_n(UIntType, UIntType) const;
 
-    UIntType calc_index(UIntType) const;
+    UIntType index(UIntType) const;
 
 };
 

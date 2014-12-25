@@ -47,7 +47,7 @@ UIntType LCG<UIntType, mul, add, mask>::prev_n(UIntType s, UIntType n) const {
  * http://plusletool.hatenablog.jp/entry/2014/11/05/230000
  */
 template<typename UIntType, UIntType mul, UIntType add, UIntType mask>
-UIntType LCG<UIntType, mul, add, mask>::calc_index(UIntType s) const {
+UIntType LCG<UIntType, mul, add, mask>::index(UIntType s) const {
     u64 a = mul;
     u64 b = add;
     u64 n = 0;
