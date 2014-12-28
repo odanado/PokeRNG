@@ -2,7 +2,7 @@ CXX=g++
 CXXFLAGS=-std=c++11 -Wall -Wextra -Weffc++ 
 
 VPATH=./PokeRNG
-OBJS=LCG.o MT.o DateTime.o
+OBJS=LCG.o MT.o DateTime.o DateTimeIterator.o
 
 LIBFLAGS=-shared -fPIC
 LIBTARGET=libPokeRNG.so
@@ -21,3 +21,4 @@ clean:
 LCG.o: LCG.hpp
 MT.o: MT.hpp
 DateTime.o: DateTime.hpp
+DateTimeIterator.o: DateTime.hpp DateTimeIterator.hpp
