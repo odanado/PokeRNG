@@ -11,10 +11,12 @@
 namespace PokeRNG {
 
 class DateTimeIterator;
+class DateTimeRange;
 
 class DateTime {
 
 friend DateTimeIterator;
+friend DateTimeRange;
 
 private:
     u32 year;
