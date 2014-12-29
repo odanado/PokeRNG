@@ -60,6 +60,11 @@ void Parameters5Gen<Constant>::set_key(u32 key_) {
 }
 
 template<typename Constant>
+void Parameters5Gen<Constant>::set_timer0(u32 timer0_) {
+    timer0 = timer0_;
+}
+
+template<typename Constant>
 void Parameters5Gen<Constant>::set_vcount(u32 vcount_) {
     vcount = vcount_;
 }
