@@ -7,6 +7,17 @@
 
 namespace PokeRNG {
 
+const u32 Calc5GenSeed::K0 = 0x5a827999; 
+const u32 Calc5GenSeed::K1 = 0x6ed9eba1;
+const u32 Calc5GenSeed::K2 = 0x8f1bbcdc;
+const u32 Calc5GenSeed::K3 = 0xca62c1d6;
+
+const u32 Calc5GenSeed::H0 = 0x67452301;
+const u32 Calc5GenSeed::H1 = 0xefcdab89;
+const u32 Calc5GenSeed::H2 = 0x98badcfe;
+const u32 Calc5GenSeed::H3 = 0x10325476;
+const u32 Calc5GenSeed::H4 = 0xc3d2e1f0;
+
 inline u32 Calc5GenSeed::to_u32_little_endian(u32 val) const {
     return ((val&0xff)<<24) | (((val>>8)&0xff)<<16) | (((val>>16)&0xff)<<8) | ((val>>24)&0xff);
 }
