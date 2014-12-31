@@ -218,6 +218,15 @@ u32 Parameters5Gen<Constant>::get_key() const {
     return key;
 }
 
+template<typename Constant>
+u32 Parameters5Gen<Constant>::get_timer0_min() const {
+    return timer0_min;
+}
+template<typename Constant>
+u32 Parameters5Gen<Constant>::get_timer0_max() const {
+    return timer0_max;
+}
+
 template class Parameters5Gen<ROMType::None>;
 template class Parameters5Gen<ROMType::B1Ja>;
 template class Parameters5Gen<ROMType::W1Ja>;
