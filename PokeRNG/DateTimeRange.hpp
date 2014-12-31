@@ -21,7 +21,6 @@ private:
     DateTime end_date_time;
 
 public:
-    DateTimeRange() = default;
 
     void set_year(u32, u32);
     void set_month(u32, u32);
