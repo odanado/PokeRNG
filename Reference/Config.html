@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>PokeRNG</title>
+
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.treegrid.js"></script>
+<link rel="stylesheet" href="../css/jquery.treegrid.css">
+
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/docs.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+<!-- Bootstrap core CSS -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="../css/dashboard.css" rel="stylesheet">
+
+<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="../js/ie-emulation-modes-warning.js"></script>
+
+<link href="../css/template.css" type="text/css" rel="stylesheet">
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script type="text/javascript">
+$(function(){
+	$('.tree').treegrid();
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49269757-4', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body>
+	<div id="container">
+
+		<div id="header">
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="../index.html">PokeRNG</a>
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="https://github.com/odanado/PokeRNG" target="_blank">GitHub</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+
+		<div id="contents">
+			<div id="menu">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-3 col-md-2 sidebar">
+							<ul class="nav nav-sidebar">
+								<table class="tree">
+									<tr class="treegrid-1">
+										<td>Reference</td>
+									</tr>
+									<tr class="treegrid-2 treegrid-parent-1">
+										<td><a href="./Calc5GenSeed.html">Calc5GenSeed</a></td>
+									</tr>
+									<tr class="treegrid-3 treegrid-parent-1">
+										<td><a href="./CalcOffset.html">CalcOffset</a></td>
+									</tr>
+									<tr class="treegrid-4 treegrid-parent-1">
+										<td><a href="./Config.html">Config</a></td>
+									</tr>
+									<tr class="treegrid-5 treegrid-parent-1">
+										<td><a href="./ConstantParameters5Gen.html">ConstantParameters5Gen</a></td>
+									</tr>
+									<tr class="treegrid-6 treegrid-parent-1">
+										<td><a href="./DateTime.html">DateTime</a></td>
+									</tr>
+									<tr class="treegrid-7 treegrid-parent-1">
+										<td><a href="./DateTimeIterator.html">DateTimeIterator</a></td>
+									</tr>
+									<tr class="treegrid-8 treegrid-parent-1">
+										<td><a href="./DateTimeRange.html">DateTimeRange</a></td>
+									</tr>
+									<tr class="treegrid-9 treegrid-parent-1">
+										<td><a href="./LCG.html">LCG</a></td>
+									</tr>
+									<tr class="treegrid-10 treegrid-parent-1">
+										<td><a href="./MT.html">MT</a></td>
+									</tr>
+									<tr class="treegrid-11 treegrid-parent-1">
+										<td><a href="./Parameters5Gen.html">Parameters5Gen</a></td>
+									</tr>
+									<tr class="treegrid-12 treegrid-parent-1">
+										<td><a href="./PokeRNG.html">PokeRNG</a></td>
+									</tr>
+									<tr class="treegrid-13 treegrid-parent-1">
+										<td><a href="./ROMType.html">ROMType</a></td>
+									</tr>
+									
+								</table>
+							</ul>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<h2 class="page-header">Config</h2>
+				<pre>
+<span style="color: #0000FF; font-weight: bold">namespace</span> PokeRNG {
+    <span style="color: #0000FF; font-weight: bold">typedef</span> <span style="color: #0000FF; font-weight: bold">uint64_t</span> u64;
+    <span style="color: #0000FF; font-weight: bold">typedef</span> <span style="color: #0000FF; font-weight: bold">uint32_t</span> u32;
+}				</pre><br>
+				<h2 class="page-header">概要</h2>
+				<p>
+					ビット数が規定された整数型を定義する。
+				</p><br>
+			</div>
+		</div>
+
+		<div id="footer">
+			<p>Copyright © odan</p>
+		</div>
+
+		<div id="global-zeroclipboard-html-bridge" class="global-zeroclipboard-container" title="" style="position: absolute; left: 0px; top: -9999px; width: 15px; height: 15px; z-index: 999999999;" data-original-title="Copy to clipboard">      <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="global-zeroclipboard-flash-bridge" width="100%" height="100%">         <param name="movie" value="/assets/flash/ZeroClipboard.swf?noCache=1419951955473">         <param name="allowScriptAccess" value="sameDomain">         <param name="scale" value="exactfit">         <param name="loop" value="false">         <param name="menu" value="false">         <param name="quality" value="best">         <param name="bgcolor" value="#ffffff">         <param name="wmode" value="transparent">         <param name="flashvars" value="trustedOrigins=getbootstrap.com%2C%2F%2Fgetbootstrap.com%2Chttp%3A%2F%2Fgetbootstrap.com">         <embed src="/assets/flash/ZeroClipboard.swf?noCache=1419951955473" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="100%" height="100%" name="global-zeroclipboard-flash-bridge" allowscriptaccess="sameDomain" allowfullscreen="false" type="application/x-shockwave-flash" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="trustedOrigins=getbootstrap.com%2C%2F%2Fgetbootstrap.com%2Chttp%3A%2F%2Fgetbootstrap.com" scale="exactfit">                </object></div><svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" preserveAspectRatio="none" style="visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs></defs><text x="0" y="10" style="font-weight:bold;font-size:10pt;font-family:Arial, Helvetica, Open Sans, sans-serif;dominant-baseline:middle">200x200</text></svg>
+	</div>
+</body></html>
