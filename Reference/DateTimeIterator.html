@@ -69,6 +69,49 @@ $(function(){
 		</div>
 
 		<div id="contents">
+			
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<h2 class="page-header">DateTimeIterator</h2>
+				<pre>
+<span style="color: #0000FF; font-weight: bold">namespace</span> PokeRNG {
+    <span style="color: #0000FF; font-weight: bold">class</span> DateTimeIterator;
+}</pre><br>
+				<h2 class="page-header">概要</h2>
+				<p>
+					<a href="./DateTime.html">DateTime</a>のイテレータである。<br>
+					後置インクリメントと間接演算子と不等価演算子が定義されているため,C++11のrange-based-forで使用できる。<br>
+				</p><br>
+
+				<h2 class="page-header">メンバ関数</h2>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>名前</th>
+							<th>説明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>DateTimeIterator(<span style="color: #FF8700; font-weight: bold">const</span> DateTime&amp;, <span style="color: #FF8700; font-weight: bold">const</span> DateTime&amp;, <span style="color: #FF8700; font-weight: bold">const</span> DateTime&amp;);</td>
+							<td>コンストラクタ 現在の値,始点,終点を指定する。</td>
+						</tr>
+						<tr>
+							<td><span style="color: #0000FF; font-weight: bold">bool</span> <span style="color: #D7005F; font-weight: bold">operator</span>!=(<span style="color: #FF8700; font-weight: bold">const</span> DateTimeIterator&amp;) <span style="color: #FF8700; font-weight: bold">const</span>;</td>
+							<td>2つのイテレータが不等価か判定する。</td>
+						</tr>
+						<tr>
+							<td><span style="color: #FF8700; font-weight: bold">const</span> DateTime&amp; <span style="color: #D7005F; font-weight: bold">operator</span>*() <span style="color: #FF8700; font-weight: bold">const</span>;</td>
+							<td>現在指している<a href="./DateTime.html">DateTime</a>の値を返す。</td>
+						</tr>
+						<tr>
+							<td><span style="color: #FF8700; font-weight: bold">const</span> DateTimeIterator&amp; <span style="color: #D7005F; font-weight: bold">operator</span>++();</td>
+							<td>イテレータを1つ進める。</td>
+						</tr>
+						
+					</tbody>
+				</table>
+			</div>
+			
 			<div id="menu">
 				<div class="container-fluid">
 					<div class="row">
@@ -121,48 +164,6 @@ $(function(){
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-				<h2 class="page-header">DateTimeIterator</h2>
-				<pre>
-<span style="color: #0000FF; font-weight: bold">namespace</span> PokeRNG {
-    <span style="color: #0000FF; font-weight: bold">class</span> DateTimeIterator;
-}</pre><br>
-				<h2 class="page-header">概要</h2>
-				<p>
-					<a href="./DateTime.html">DateTime</a>のイテレータである。<br>
-					後置インクリメントと間接演算子と不等価演算子が定義されているため,C++11のrange-based-forで使用できる。<br>
-				</p><br>
-
-				<h2 class="page-header">メンバ関数</h2>
-				<table class="table">
-					<thead>
-						<tr>
-							<th>名前</th>
-							<th>説明</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>DateTimeIterator(<span style="color: #FF8700; font-weight: bold">const</span> DateTime&amp;, <span style="color: #FF8700; font-weight: bold">const</span> DateTime&amp;, <span style="color: #FF8700; font-weight: bold">const</span> DateTime&amp;);</td>
-							<td>コンストラクタ 現在の値,始点,終点を指定する。</td>
-						</tr>
-						<tr>
-							<td><span style="color: #0000FF; font-weight: bold">bool</span> <span style="color: #D7005F; font-weight: bold">operator</span>!=(<span style="color: #FF8700; font-weight: bold">const</span> DateTimeIterator&amp;) <span style="color: #FF8700; font-weight: bold">const</span>;</td>
-							<td>2つのイテレータが不等価か判定する。</td>
-						</tr>
-						<tr>
-							<td><span style="color: #FF8700; font-weight: bold">const</span> DateTime&amp; <span style="color: #D7005F; font-weight: bold">operator</span>*() <span style="color: #FF8700; font-weight: bold">const</span>;</td>
-							<td>現在指している<a href="./DateTime.html">DateTime</a>の値を返す。</td>
-						</tr>
-						<tr>
-							<td><span style="color: #FF8700; font-weight: bold">const</span> DateTimeIterator&amp; <span style="color: #D7005F; font-weight: bold">operator</span>++();</td>
-							<td>イテレータを1つ進める。</td>
-						</tr>
-						
-					</tbody>
-				</table>
 			</div>
 		</div>
 

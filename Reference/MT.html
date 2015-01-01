@@ -69,6 +69,45 @@ $(function(){
 		</div>
 
 		<div id="contents">
+			
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<h2 class="page-header">MT</h2>
+				<pre>
+<span style="color: #0000FF; font-weight: bold">namespace</span> PokeRNG {
+    <span style="color: #0000FF; font-weight: bold">typedef</span> std::mt19937 MT;
+}</pre><br>
+
+				<h2 class="page-header">概要</h2>
+				<p>
+					MTとはメルセンヌツイスタと呼ばれる擬似乱数生成アルゴリズムのことである。<br>
+					特徴として\(2^{19937}\)という長い周期を持つことや,\(623\)次元に均等分布することが挙げられる。<br>
+					4世代では孵化乱数の性格値決定に,5世代では徘徊固定野性孵化乱数の個体値決定に使用されている。<br>
+				</p><br>
+				<h2 class="page-header">メンバ関数</h2>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>名前</th>
+							<th>説明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>MT(u32);</td>
+							<td>シードを設定する。</td>
+						</tr>
+						<tr>
+							<td><span style="color: #0000FF; font-weight: bold">void</span> seed(u32);</td>
+							<td>シードを設定する。</td>
+						</tr>
+						<tr>
+							<td>u32 <span style="color: #D7005F; font-weight: bold">operator</span>();</td>
+							<td>メルセンヌツイスタによる次の乱数を返す。</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
 			<div id="menu">
 				<div class="container-fluid">
 					<div class="row">
@@ -122,44 +161,7 @@ $(function(){
 					</div>
 				</div>
 			</div>
-
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-				<h2 class="page-header">MT</h2>
-				<pre>
-<span style="color: #0000FF; font-weight: bold">namespace</span> PokeRNG {
-    <span style="color: #0000FF; font-weight: bold">typedef</span> std::mt19937 MT;
-}</pre><br>
-
-				<h2 class="page-header">概要</h2>
-				<p>
-					MTとはメルセンヌツイスタと呼ばれる擬似乱数生成アルゴリズムのことである。<br>
-					特徴として\(2^{19937}\)という長い周期を持つことや,\(623\)次元に均等分布することが挙げられる。<br>
-					4世代では孵化乱数の性格値決定に,5世代では徘徊固定野性孵化乱数の個体値決定に使用されている。<br>
-				</p><br>
-				<h2 class="page-header">メンバ関数</h2>
-				<table class="table">
-					<thead>
-						<tr>
-							<th>名前</th>
-							<th>説明</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>MT(u32);</td>
-							<td>シードを設定する。</td>
-						</tr>
-						<tr>
-							<td><span style="color: #0000FF; font-weight: bold">void</span> seed(u32);</td>
-							<td>シードを設定する。</td>
-						</tr>
-						<tr>
-							<td>u32 <span style="color: #D7005F; font-weight: bold">operator</span>();</td>
-							<td>メルセンヌツイスタによる次の乱数を返す。</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+			
 		</div>
 
 		<div id="footer">

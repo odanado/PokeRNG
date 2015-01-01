@@ -69,6 +69,37 @@ $(function(){
 		</div>
 
 		<div id="contents">
+			
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<h2 class="page-header">Calc5GenSeed</h2>
+				<pre>
+<span style="color: #0000FF; font-weight: bold">namespace</span> PokeRNG {
+    <span style="color: #0000FF; font-weight: bold">class</span> Calc5GenSeed;
+}</pre><br>
+				<h2 class="page-header">概要</h2>
+				<p>
+					パラメータ群から初期シードの値を計算する。<br>
+				</p><br>
+				<h2 class="page-header">メンバ関数</h2>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>名前</th>
+							<th>説明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<span style="color: #0000FF; font-weight: bold">template</span>&lt;<span style="color: #0000FF; font-weight: bold">typename</span> Constant&gt;<br>
+								u64 <span style="color: #D7005F; font-weight: bold">operator</span>() (<span style="color: #FF8700; font-weight: bold">const</span> Parameters5Gen&lt;Constant&gt;&amp;);
+							</td>
+							<td>与えられたパラメータ群から初期シードの値を計算する。</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
 			<div id="menu">
 				<div class="container-fluid">
 					<div class="row">
@@ -122,38 +153,9 @@ $(function(){
 					</div>
 				</div>
 			</div>
-
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-				<h2 class="page-header">Calc5GenSeed</h2>
-				<pre>
-<span style="color: #0000FF; font-weight: bold">namespace</span> PokeRNG {
-    <span style="color: #0000FF; font-weight: bold">class</span> Calc5GenSeed;
-}</pre><br>
-				<h2 class="page-header">概要</h2>
-				<p>
-					パラメータ群から初期シードの値を計算する。<br>
-				</p><br>
-				<h2 class="page-header">メンバ関数</h2>
-				<table class="table">
-					<thead>
-						<tr>
-							<th>名前</th>
-							<th>説明</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								<span style="color: #0000FF; font-weight: bold">template</span>&lt;<span style="color: #0000FF; font-weight: bold">typename</span> Constant&gt;<br>
-								u64 <span style="color: #D7005F; font-weight: bold">operator</span>() (<span style="color: #FF8700; font-weight: bold">const</span> Parameters5Gen&lt;Constant&gt;&amp;);
-							</td>
-							<td>与えられたパラメータ群から初期シードの値を計算する。</td>
-						</tr>
-					</tbody>
-				</table>
-
-			</div>
 		</div>
+
+
 
 		<div id="footer">
 			<p>Copyright © odan</p>
