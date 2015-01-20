@@ -29,8 +29,7 @@ private:
 
 public:
 
-    CalcOffset(bool, bool, bool, bool);
-    CalcOffset();
+    CalcOffset(bool is_bw1 = true, bool has_continued = true, bool exist_data = true, bool exist_memory_link = true);
 
     u64 get_seed() const;
     u64 get_offset() const;

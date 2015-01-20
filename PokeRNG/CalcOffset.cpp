@@ -14,7 +14,6 @@ const u32 CalcOffset::PROBABILITY_TABLE[6][5] = {
 
 CalcOffset::CalcOffset(bool is_bw1, bool has_continued, bool exist_data, bool exist_memory_link) : lcg(LCG5Gen()), offset(0), seed(0), is_bw1(is_bw1), has_continued(has_continued), exist_data(exist_data), exist_memory_link(exist_memory_link) { }
 
-CalcOffset::CalcOffset() : CalcOffset::CalcOffset{true, true, true, true} { }
 
 
 inline u64 CalcOffset::next(u64 s) {
