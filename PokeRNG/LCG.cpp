@@ -48,10 +48,10 @@ UIntType LCG<UIntType, mul, add, mask>::prev_n(UIntType s, UIntType n) const {
  */
 template<typename UIntType, UIntType mul, UIntType add, UIntType mask>
 UIntType LCG<UIntType, mul, add, mask>::index(UIntType s) const {
-    u64 a = mul;
-    u64 b = add;
-    u64 n = 0;
-    u64 x = 1;
+    UIntType a = mul;
+    UIntType b = add;
+    UIntType n = 0;
+    UIntType x = 1;
 
     while(x) {
         if(s & x) {
