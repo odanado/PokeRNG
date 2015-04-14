@@ -19,24 +19,24 @@ namespace PokeRNG {
 template<typename UIntType, UIntType mul, UIntType add, UIntType mask>
 class LCG {
 private:
-    template<class T, T A, T MASK, T N>
+    template<class T, T A, T MASK, class U>
     struct calc_pow_tmp{
-        static const T value = (N & 1 ? A : 1) *
-            calc_pow_tmp<T, (A*A) & MASK, MASK, (N >> 1)>::value;
+        static const T value = (U::value & 1 ? A : 1) *
+            calc_pow_tmp<T, (A*A) & MASK, MASK, std::integral_constant<T, (U::value>>1)>>::value;
     };
 
     template<u64 A, u64 MASK>
-    struct calc_pow_tmp<u64, A, MASK, 0> {
+    struct calc_pow_tmp<u64, A, MASK, std::integral_constant<u64,0>> {
         static const u64 value = 1;
     };
     template<u32 A, u32 MASK>
-    struct calc_pow_tmp<u32, A, MASK, 0> {
+    struct calc_pow_tmp<u32, A, MASK, std::integral_constant<u32,0>> {
         static const u32 value = 1;
     };
 
     template<class T,T A, T MASK>
     struct calc_inverse_tmp {
-        static const T value = calc_pow_tmp<T,A, MASK, (MASK >> 1)>::value;
+        static const T value = calc_pow_tmp<T,A, MASK, std::integral_constant<T, (MASK >> 1)>>::value;
     };
 
 
