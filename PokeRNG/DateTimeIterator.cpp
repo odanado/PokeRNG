@@ -10,7 +10,19 @@ namespace PokeRNG {
 const u32 DateTimeIterator::month_ends[13] = 
                 { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
-DateTimeIterator::DateTimeIterator(const DateTime& date_time, const DateTime& begin, const DateTime& end) : date_time(date_time), begin_date_time(begin), end_date_time(end) { }
+DateTimeIterator::DateTimeIterator(const DateTime& date_time_, const DateTime& begin, const DateTime& end) : date_time(date_time_), begin_date_time(begin), end_date_time(end) {
+    if(month_ends[begin_date_time.month] < begin_date_time.day) {
+        begin_date_time.day = month_ends[begin_date_time.month];
+    }
+
+    if(month_ends[end_date_time.month] < end_date_time.day) {
+        end_date_time.day = month_ends[end_date_time.month];
+    }
+
+    if(month_ends[date_time.month] < date_time.day) {
+        date_time.day = month_ends[date_time.month];
+    }
+}
 
 bool DateTimeIterator::operator!=(const DateTimeIterator& it) const {
     if(date_time.year != it.date_time.year) return true;
@@ -47,7 +59,7 @@ const DateTimeIterator& DateTimeIterator::operator++() {
     }
     date_time.hour = begin_date_time.hour;
 
-    if(date_time.day < std::min(month_ends[date_time.month], end_date_time.day)) {
+    if(date_time.day < end_date_time.day) {
         ++date_time.day;
         return *this;
     }
