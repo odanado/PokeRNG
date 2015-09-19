@@ -59,7 +59,7 @@ const DateTimeIterator& DateTimeIterator::operator++() {
     }
     date_time.hour = begin_date_time.hour;
 
-    if(date_time.day < end_date_time.day) {
+    if(date_time.day < std::min(month_ends[date_time.month], end_date_time.day)) {
         ++date_time.day;
         return *this;
     }
