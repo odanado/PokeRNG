@@ -79,4 +79,43 @@ const DateTimeIterator& DateTimeIterator::operator++() {
     return *this;
 }
 
+const DateTimeIterator& DateTimeIterator::operator--() {
+    if(date_time.second > begin_date_time.second) {
+        --date_time.second;
+        return *this;
+    }
+    date_time.second = end_date_time.second;
+
+    if(date_time.minute > begin_date_time.minute) {
+        --date_time.minute;
+        return *this;
+    }
+    date_time.minute = end_date_time.minute;
+
+    if(date_time.hour > begin_date_time.hour) {
+        --date_time.hour;
+        return *this;
+    }
+    date_time.hour = end_date_time.hour;
+
+    if(date_time.day > begin_date_time.day) {
+        --date_time.day;
+        return *this;
+    }
+    date_time.day = std::min(month_ends[date_time.month-1==0?12:date_time.month-1], end_date_time.day);
+
+    if(date_time.month > begin_date_time.month) {
+        --date_time.month;
+        return *this;
+    }
+    date_time.month = end_date_time.month;
+
+    if(date_time.year > begin_date_time.year) {
+        --date_time.year;
+        return *this;
+    }
+
+    return *this;
+}
+
 } // end PokeRNG

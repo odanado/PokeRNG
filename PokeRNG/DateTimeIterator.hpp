@@ -30,6 +30,8 @@ public:
 
     const DateTimeIterator& operator++();
 
+    const DateTimeIterator& operator--();
+
 };
 
 } // end PokeRNG
