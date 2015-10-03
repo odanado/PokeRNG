@@ -19,7 +19,7 @@ private:
     DateTime begin_date_time;
     DateTime end_date_time;
 
-    static const u32 month_ends[13];
+    static const u32 month_ends[2][13];
 
 public:
     DateTimeIterator(const DateTime&, const DateTime&, const DateTime&);
