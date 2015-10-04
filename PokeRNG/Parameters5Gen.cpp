@@ -230,5 +230,7 @@ u32 Parameters5Gen<Constant>::get_timer0_max() const {
 template class Parameters5Gen<ROMType::None>;
 template class Parameters5Gen<ROMType::B1Ja>;
 template class Parameters5Gen<ROMType::W1Ja>;
+template class Parameters5Gen<ROMType::B2Ja>;
+template class Parameters5Gen<ROMType::W2Ja>;
 
 } // end PokeRNG
