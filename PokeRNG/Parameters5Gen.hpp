@@ -90,6 +90,7 @@ public:
     u32 get_minute() const;
     u32 get_second() const;
     u32 get_week() const;
+    DateTime get_date_time() const;
 
     u32 get_nazo1() const;
     u32 get_nazo2() const;

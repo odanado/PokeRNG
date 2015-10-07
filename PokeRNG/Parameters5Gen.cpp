@@ -177,6 +177,19 @@ u32 Parameters5Gen<Constant>::get_week() const {
 }
 
 template<typename Constant>
+DateTime Parameters5Gen<Constant>::get_date_time() const {
+    DateTime date_time;
+    date_time.set_year(year);
+    date_time.set_month(year);
+    date_time.set_day(year);
+    date_time.set_hour(year);
+    date_time.set_minute(year);
+    date_time.set_second(year);
+
+    return date_time;
+}
+
+template<typename Constant>
 u32 Parameters5Gen<Constant>::get_nazo1() const {
     return nazo1;
 }
