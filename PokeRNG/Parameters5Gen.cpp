@@ -180,11 +180,11 @@ template<typename Constant>
 DateTime Parameters5Gen<Constant>::get_date_time() const {
     DateTime date_time;
     date_time.set_year(year);
-    date_time.set_month(year);
-    date_time.set_day(year);
-    date_time.set_hour(year);
-    date_time.set_minute(year);
-    date_time.set_second(year);
+    date_time.set_month(month);
+    date_time.set_day(day);
+    date_time.set_hour(hour);
+    date_time.set_minute(minute);
+    date_time.set_second(second);
 
     return date_time;
 }
