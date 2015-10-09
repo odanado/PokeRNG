@@ -22,6 +22,7 @@ private:
     static const u32 month_ends[2][13];
 
 public:
+    DateTimeIterator() = default;
     DateTimeIterator(const DateTime&, const DateTime&, const DateTime&);
 
     bool operator!=(const DateTimeIterator&) const;
