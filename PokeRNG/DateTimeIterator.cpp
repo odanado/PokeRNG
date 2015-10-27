@@ -7,10 +7,27 @@
 
 namespace PokeRNG {
 
-const u32 DateTimeIterator::month_ends[13] = 
-                { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+const u32 DateTimeIterator::month_ends[2][13] = {
+                { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 },
+                { 0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 }};
 
-DateTimeIterator::DateTimeIterator(const DateTime& date_time, const DateTime& begin, const DateTime& end) : date_time(date_time), begin_date_time(begin), end_date_time(end) { }
+inline u32 is_leap_year(u32 year) {
+    return (year%4==0&&year%100!=0)||year%400==0;
+}
+
+DateTimeIterator::DateTimeIterator(const DateTime& date_time_, const DateTime& begin, const DateTime& end) : date_time(date_time_), begin_date_time(begin), end_date_time(end) {
+    if(month_ends[is_leap_year(begin_date_time.year)][begin_date_time.month] < begin_date_time.day) {
+        begin_date_time.day = month_ends[is_leap_year(begin_date_time.year)][begin_date_time.month];
+    }
+
+    if(month_ends[is_leap_year(end_date_time.year)][end_date_time.month] < end_date_time.day) {
+        end_date_time.day = month_ends[is_leap_year(end_date_time.year)][end_date_time.month];
+    }
+
+    if(month_ends[is_leap_year(date_time.year)][date_time.month] < date_time.day) {
+        date_time.day = month_ends[is_leap_year(date_time.year)][date_time.month];
+    }
+}
 
 bool DateTimeIterator::operator!=(const DateTimeIterator& it) const {
     if(date_time.year != it.date_time.year) return true;
@@ -47,7 +64,7 @@ const DateTimeIterator& DateTimeIterator::operator++() {
     }
     date_time.hour = begin_date_time.hour;
 
-    if(date_time.day < std::min(month_ends[date_time.month], end_date_time.day)) {
+    if(date_time.day < std::min(month_ends[is_leap_year(date_time.year)][date_time.month], end_date_time.day)) {
         ++date_time.day;
         return *this;
     }
@@ -61,6 +78,45 @@ const DateTimeIterator& DateTimeIterator::operator++() {
 
     if(date_time.year < end_date_time.year) {
         ++date_time.year;
+        return *this;
+    }
+
+    return *this;
+}
+
+const DateTimeIterator& DateTimeIterator::operator--() {
+    if(date_time.second > begin_date_time.second) {
+        --date_time.second;
+        return *this;
+    }
+    date_time.second = end_date_time.second;
+
+    if(date_time.minute > begin_date_time.minute) {
+        --date_time.minute;
+        return *this;
+    }
+    date_time.minute = end_date_time.minute;
+
+    if(date_time.hour > begin_date_time.hour) {
+        --date_time.hour;
+        return *this;
+    }
+    date_time.hour = end_date_time.hour;
+
+    if(date_time.day > begin_date_time.day) {
+        --date_time.day;
+        return *this;
+    }
+    date_time.day = std::min(month_ends[is_leap_year(date_time.year)][date_time.month-1==0?12:date_time.month-1], end_date_time.day);
+
+    if(date_time.month > begin_date_time.month) {
+        --date_time.month;
+        return *this;
+    }
+    date_time.month = end_date_time.month;
+
+    if(date_time.year > begin_date_time.year) {
+        --date_time.year;
         return *this;
     }
 

@@ -177,6 +177,19 @@ u32 Parameters5Gen<Constant>::get_week() const {
 }
 
 template<typename Constant>
+DateTime Parameters5Gen<Constant>::get_date_time() const {
+    DateTime date_time;
+    date_time.set_year(year);
+    date_time.set_month(month);
+    date_time.set_day(day);
+    date_time.set_hour(hour);
+    date_time.set_minute(minute);
+    date_time.set_second(second);
+
+    return date_time;
+}
+
+template<typename Constant>
 u32 Parameters5Gen<Constant>::get_nazo1() const {
     return nazo1;
 }
@@ -230,5 +243,7 @@ u32 Parameters5Gen<Constant>::get_timer0_max() const {
 template class Parameters5Gen<ROMType::None>;
 template class Parameters5Gen<ROMType::B1Ja>;
 template class Parameters5Gen<ROMType::W1Ja>;
+template class Parameters5Gen<ROMType::B2Ja>;
+template class Parameters5Gen<ROMType::W2Ja>;
 
 } // end PokeRNG

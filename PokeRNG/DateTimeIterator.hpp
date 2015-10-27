@@ -19,9 +19,10 @@ private:
     DateTime begin_date_time;
     DateTime end_date_time;
 
-    static const u32 month_ends[13];
+    static const u32 month_ends[2][13];
 
 public:
+    DateTimeIterator() = default;
     DateTimeIterator(const DateTime&, const DateTime&, const DateTime&);
 
     bool operator!=(const DateTimeIterator&) const;
@@ -29,6 +30,8 @@ public:
     const DateTime& operator*() const;
 
     const DateTimeIterator& operator++();
+
+    const DateTimeIterator& operator--();
 
 };
 
