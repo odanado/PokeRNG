@@ -56,7 +56,7 @@ u64 Calc5GenSeed::operator() (const Parameters5Gen<Constant>& param) {
                (to_bcd(param.get_day()) << 8) |
                 param.get_week();
         W[9] = ((to_bcd(param.get_hour()) |
-               ((12<=param.get_hour())<<6)) << 24) |
+               ((!param.get_is3ds()&&12<=param.get_hour())<<6)) << 24) |
                (to_bcd(param.get_minute()) << 16) |
                (to_bcd(param.get_second()) << 8);
         W[10] = 0x00000000;
@@ -126,5 +126,9 @@ template u64 Calc5GenSeed::operator()<ROMType::B1Ja>(const Parameters5Gen<ROMTyp
 template u64 Calc5GenSeed::operator()<ROMType::W1Ja>(const Parameters5Gen<ROMType::W1Ja>&);
 template u64 Calc5GenSeed::operator()<ROMType::B2Ja>(const Parameters5Gen<ROMType::B2Ja>&);
 template u64 Calc5GenSeed::operator()<ROMType::W2Ja>(const Parameters5Gen<ROMType::W2Ja>&);
+template u64 Calc5GenSeed::operator()<ROMType::B1JaDSi>(const Parameters5Gen<ROMType::B1JaDSi>&);
+template u64 Calc5GenSeed::operator()<ROMType::W1JaDSi>(const Parameters5Gen<ROMType::W1JaDSi>&);
+template u64 Calc5GenSeed::operator()<ROMType::B2JaDSi>(const Parameters5Gen<ROMType::B2JaDSi>&);
+template u64 Calc5GenSeed::operator()<ROMType::W2JaDSi>(const Parameters5Gen<ROMType::W2JaDSi>&);
 
 } // end PokeRNG
