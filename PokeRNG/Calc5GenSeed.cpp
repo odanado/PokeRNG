@@ -126,5 +126,9 @@ template u64 Calc5GenSeed::operator()<ROMType::B1Ja>(const Parameters5Gen<ROMTyp
 template u64 Calc5GenSeed::operator()<ROMType::W1Ja>(const Parameters5Gen<ROMType::W1Ja>&);
 template u64 Calc5GenSeed::operator()<ROMType::B2Ja>(const Parameters5Gen<ROMType::B2Ja>&);
 template u64 Calc5GenSeed::operator()<ROMType::W2Ja>(const Parameters5Gen<ROMType::W2Ja>&);
+template u64 Calc5GenSeed::operator()<ROMType::B1JaDSi>(const Parameters5Gen<ROMType::B1JaDSi>&);
+template u64 Calc5GenSeed::operator()<ROMType::W1JaDSi>(const Parameters5Gen<ROMType::W1JaDSi>&);
+template u64 Calc5GenSeed::operator()<ROMType::B2JaDSi>(const Parameters5Gen<ROMType::B2JaDSi>&);
+template u64 Calc5GenSeed::operator()<ROMType::W2JaDSi>(const Parameters5Gen<ROMType::W2JaDSi>&);
 
 } // end PokeRNG

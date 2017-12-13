@@ -255,5 +255,9 @@ template class Parameters5Gen<ROMType::B1Ja>;
 template class Parameters5Gen<ROMType::W1Ja>;
 template class Parameters5Gen<ROMType::B2Ja>;
 template class Parameters5Gen<ROMType::W2Ja>;
+template class Parameters5Gen<ROMType::B1JaDSi>;
+template class Parameters5Gen<ROMType::W1JaDSi>;
+template class Parameters5Gen<ROMType::B2JaDSi>;
+template class Parameters5Gen<ROMType::W2JaDSi>;
 
 } // end PokeRNG
