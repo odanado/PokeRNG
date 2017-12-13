@@ -7,7 +7,7 @@
 
 namespace PokeRNG {
 template<typename Constant>
-Parameters5Gen<Constant>::Parameters5Gen() : nazo1(Constant::nazo1), nazo2(Constant::nazo2), nazo3(Constant::nazo3), nazo4(Constant::nazo4), nazo5(Constant::nazo5), vcount(Constant::vcount), gxstat(Constant::gxstat), frame(Constant::frame), timer0_min(Constant::timer0_min), timer0_max(Constant::timer0_max), timer0(timer0_min), key(0x2fff), mac_addr1(0), mac_addr2(0), mac_addr3(0), mac_addr4(0), mac_addr5(0), mac_addr6(0), year(0), month(0), day(0), hour(0), minute(0), second(0) { }
+Parameters5Gen<Constant>::Parameters5Gen() : nazo1(Constant::nazo1), nazo2(Constant::nazo2), nazo3(Constant::nazo3), nazo4(Constant::nazo4), nazo5(Constant::nazo5), vcount(Constant::vcount), gxstat(Constant::gxstat), frame(Constant::frame), timer0_min(Constant::timer0_min), timer0_max(Constant::timer0_max), timer0(timer0_min), key(0x2fff), mac_addr1(0), mac_addr2(0), mac_addr3(0), mac_addr4(0), mac_addr5(0), mac_addr6(0), year(0), month(0), day(0), hour(0), minute(0), second(0), is3ds(false) { }
 
 template<typename Constant>
 void Parameters5Gen<Constant>::set_mac_addr(u32 m1, u32 m2, u32 m3, u32 m4, u32 m5, u32 m6) {
@@ -112,6 +112,11 @@ void Parameters5Gen<Constant>::set_timer0_min(u32 timer0_min_) {
 template<typename Constant>
 void Parameters5Gen<Constant>::set_timer0_max(u32 timer0_max_) {
     timer0_max = timer0_max_;
+}
+
+template<typename Constant>
+void Parameters5Gen<Constant>::set_is3ds(bool is3ds_) {
+    is3ds = is3ds_;
 }
 
 template<typename Constant>
@@ -238,6 +243,11 @@ u32 Parameters5Gen<Constant>::get_timer0_min() const {
 template<typename Constant>
 u32 Parameters5Gen<Constant>::get_timer0_max() const {
     return timer0_max;
+}
+
+template<typename Constant>
+bool Parameters5Gen<Constant>::get_is3ds() const {
+    return is3ds;
 }
 
 template class Parameters5Gen<ROMType::None>;

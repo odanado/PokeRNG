@@ -45,6 +45,8 @@ private:
     u32 minute;
     u32 second;
 
+    bool is3ds;
+
 
 public:
     Parameters5Gen();
@@ -74,6 +76,8 @@ public:
 
     void set_timer0_min(u32);
     void set_timer0_max(u32);
+
+    void set_is3ds(bool);
 
 
     u32 get_mac_addr1() const;
@@ -106,6 +110,8 @@ public:
 
     u32 get_timer0_min() const;
     u32 get_timer0_max() const;
+
+    bool get_is3ds() const;
 
 };
 

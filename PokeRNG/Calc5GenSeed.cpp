@@ -56,7 +56,7 @@ u64 Calc5GenSeed::operator() (const Parameters5Gen<Constant>& param) {
                (to_bcd(param.get_day()) << 8) |
                 param.get_week();
         W[9] = ((to_bcd(param.get_hour()) |
-               ((12<=param.get_hour())<<6)) << 24) |
+               ((!param.get_is3ds()&&12<=param.get_hour())<<6)) << 24) |
                (to_bcd(param.get_minute()) << 16) |
                (to_bcd(param.get_second()) << 8);
         W[10] = 0x00000000;
